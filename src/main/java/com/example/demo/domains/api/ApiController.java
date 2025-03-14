@@ -2,6 +2,7 @@ package com.example.demo.domains.api;
 
 import com.example.demo.common.data.ResultData;
 import com.example.demo.common.enums.ApiResultEnum;
+import com.example.demo.common.exception.ApiException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,4 +38,11 @@ public class ApiController {
         Map<String, Object> map = new HashMap<>();
         throw new RuntimeException();
     }
+
+    @GetMapping(value = "/test4")
+    public ResponseEntity<ResultData> test4(){
+        Map<String, Object> map = new HashMap<>();
+        throw new ApiException("에러임");
+    }
+
 }
