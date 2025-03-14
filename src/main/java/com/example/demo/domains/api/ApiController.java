@@ -31,4 +31,10 @@ public class ApiController {
         map.put("param4", "param4");
         return ResponseEntity.ok(new ResultData(ApiResultEnum.SUCCESS, map));
     }
+
+    @GetMapping(value = "/test3")
+    public ResponseEntity<ResultData> test3(){
+        Map<String, Object> map = new HashMap<>();
+        throw new RuntimeException();
+    }
 }
