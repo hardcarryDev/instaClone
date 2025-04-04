@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "insta")
 public class InstaController {
 
+    @GetMapping("/login")
+    public String loginPage1() {
+        return "login";
+    }
+
+
     @GetMapping("/test")
     public String testPage1() {
         return "test";

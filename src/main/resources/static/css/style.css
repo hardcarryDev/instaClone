@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+/* 로그인 페이지 스타일 */
+#login-page {
+    background-color: #fafafa;
+    font-family: 'Helvetica', sans-serif;
+    min-height: 100vh;
+}
+
+#login-page .logo-text {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #262626;
+}
+
+#login-page .login-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: white;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+#login-page .form-group {
+    margin-bottom: 20px;
+}
+
+#login-page input[type="text"],
+#login-page input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+#login-page .btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#login-page .btn-login:hover {
+    background-color: #2a75c4;
+}
+
+#login-page .signup-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#login-page .signup-text a {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+/* 반응형 조정 */
+@media (max-width: 400px) {
+    #login-page .login-container {
+        padding: 30px 20px;
+        margin: 40px 10px;
+    }
+
+    #login-page .logo-text {
+        font-size: 36px;
+    }
+
+    #login-page .btn-login {
+        font-size: 14px;
+    }
+}
