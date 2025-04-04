@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">Instagram</div>
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i></li>
+                <li><i class="fas fa-search"></i></li>
+                <li><i class="fas fa-plus-square"></i></li>
+                <li><i class="fas fa-heart"></i></li>
+                <li><i class="fas fa-user"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="stories">
+            <div class="story">스토리1</div>
+            <div class="story">스토리2</div>
+            <div class="story">스토리3</div>
+        </section>
+        <section class="posts">
+            <article class="post">
+                <div class="post-header">사용자1</div>
+                <div class="post-image">이미지</div>
+                <div class="post-footer">좋아요, 댓글</div>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+    }
+    .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border: 1px solid #dbdbdb;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #dbdbdb;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+    }
+    nav ul li {
+        font-size: 20px;
+    }
+    .stories {
+        display: flex;
+        padding: 10px;
+        border-bottom: 1px solid #dbdbdb;
+    }
+    .story {
+        width: 60px;
+        height: 60px;
+        background: lightgray;
+        border-radius: 50%;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 60px;
+    }
+    .posts {
+        padding: 10px;
+    }
+    .post {
+        border: 1px solid #dbdbdb;
+        margin-bottom: 10px;
+        background: white;
+    }
+    .post-header {
+        padding: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid #dbdbdb;
+    }
+    .post-image {
+        height: 300px;
+        background: lightgray;
+    }
+    .post-footer {
+        padding: 10px;
+        border-top: 1px solid #dbdbdb;
+    }
+</style>
