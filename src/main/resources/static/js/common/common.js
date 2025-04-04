@@ -73,5 +73,39 @@ this.Utils = {
         };
 
         return $.ajax(config);
-    }
+    },
+
+    loadMask : function (id) {
+        const _this = this;
+        console.log("_this: ", _this)
+
+        _this.id = id||Utils.getUUID();
+        _this.open = async function(){
+            const html = `<div class="spinner-bg" id='${_this.id}'>
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>`;
+            $("body").append($(html));
+            //$(`#${_this.id}`).fadeIn();
+            $(`#${_this.id}`).show();
+            _this.isOpen = true;
+            //10초후에도 돌고있으면..
+            _this.intId = setTimeout(function(){
+                if(_this.isOpen) {
+                    _this.close();
+                }
+            },20000);
+            return true;
+        }
+        _this.close = function(){
+            /*$(`#${_this.id}`).fadeOut(1000,function(){
+                $(`#${_this.id}`).remove();
+                _this.isOpen = false;
+            });*/
+            $(`#${_this.id}`).remove();
+            _this.isOpen = false;
+        }
+        return _this;
+    },
 };
