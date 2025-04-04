@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Instagram Clone</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/js/plugin/fontawesome/css/all.min.css}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<section layout:fragment="content"></section>
+</body>
+</html>
