@@ -1,0 +1,195 @@
+html, body{height: 100%;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color: #000;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+button{
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+select{cursor: pointer;}
+strong, b{font-weight: 700;}
+pre{
+	overflow: visible;
+}
+
+.summernote-editor html{
+	color:#000;
+	background:#FFF
+}
+.summernote-editor body,.summernote-editor div,
+.summernote-editor dl,.summernote-editor dt,
+.summernote-editor dd,.summernote-editor ul,
+.summernote-editor ol,.summernote-editor li,
+.summernote-editor h1,.summernote-editor h2,
+.summernote-editor h3,.summernote-editor h4,
+.summernote-editor h5,.summernote-editor h6,
+.summernote-editor pre,.summernote-editor code,
+.summernote-editor form,.summernote-editor fieldset,
+.summernote-editor legend,.summernote-editor input,
+.summernote-editor textarea,.summernote-editor p,
+.summernote-editor blockquote,.summernote-editor th,.summernote-editor td{
+	margin:0;
+	padding:0;
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: initial;
+}
+.summernote-editor table{
+	border-collapse:collapse;
+	border-spacing:0
+}
+.summernote-editor fieldset,.summernote-editor img{border:0}
+.summernote-editor address,.summernote-editor caption,.summernote-editor cite,
+.summernote-editor code,.summernote-editor dfn,.summernote-editor em,.summernote-editor strong,
+.summernote-editor th,.summernote-editor var{
+	font-style:normal;
+	font-weight:normal
+}
+.summernote-editor ol,.summernote-editor ul{list-style:none}
+.summernote-editor caption,
+.summernote-editor th{text-align:left}
+.summernote-editor h1,.summernote-editor h2,.summernote-editor h3,.summernote-editor h4,
+.summernote-editor h5,.summernote-editor h6{
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.summernote-editor q:before,.summernote-editor q:after{content:''}
+.summernote-editor abbr,.summernote-editor acronym{border:0;font-variant:normal}
+.summernote-editor sup{vertical-align:text-top}.summernote-editor sub{vertical-align:text-bottom}
+.summernote-editor input,.summernote-editor textarea,.summernote-editor select{
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit
+}
+.summernote-editor input,.summernote-editor textarea,.summernote-editor select{font-size:100%}
+.summernote-editor legend{color:#000}
+.summernote-editor i{font-style: italic;}
+.summernote-editor.cssreset-context{display:none}
+.summernote-editor code, .summernote-editor kbd, 
+.summernote-editor pre, .summernote-editor samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.summernote-editor pre {
+  unicode-bidi: isolate;
+  white-space: pre;
+  overflow: auto;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: inherit;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.summernote-editor td,
+.summernote-editor th{
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.summernote-editor u {
+  text-decoration: underline;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+.summernote-editor span{
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+.summernote-editor td,
+.summernote-editor th{
+  border: 1px solid #ddd;
+  text-align: left;
+	background-color: #fff !important;
+	padding: 6px !important;
+}
+.summernote-editor b, .summernote-editor strong {
+  font-weight: 700;
+}
+.summernote-editor li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+  list-style-position: inside;
+}
+.summernote-editor ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+.summernote-editor ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding-right: 5px;
+}
