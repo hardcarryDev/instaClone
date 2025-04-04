@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/common-layout}">
+
+<head>
+    <title>회원가입</title>
+</head>
+
+<body>
+<section layout:fragment="content">
+    <div id="signup-page">
+        <div class="signup-container">
+            <h2>Instagram Clone</h2>
+            <p class="signup-subtitle">친구들의 사진과 동영상을 보려면 가입하세요.</p>
+
+            <form id="signupForm" th:action="@{/signup}" method="post">
+                <div class="form-group">
+                    <input type="text" name="email" placeholder="이메일" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="성명" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="userId" placeholder="사용자 이름" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="비밀번호" required>
+                </div>
+                <button type="submit" class="btn-signup">가입</button>
+            </form>
+
+            <div class="login-text">
+                계정이 있으신가요? <a th:href="@{/login}">로그인</a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script th:inline="javascript" th:src="@{/js/views/signup.js}"></script>
+</html>

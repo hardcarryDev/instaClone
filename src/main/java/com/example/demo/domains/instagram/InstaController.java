@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class InstaController {
 
     @GetMapping("/login")
-    public String loginPage1() {
+    public String loginPage() {
         return "login";
+    }
+
+    @GetMapping("/signup")
+    public String signupPage() {
+        return "signup";
     }
 
 

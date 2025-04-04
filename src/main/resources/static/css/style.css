@@ -81,3 +81,67 @@
         font-size: 14px;
     }
 }
+
+
+/* 회원가입 페이지 스타일 */
+#signup-page {
+    background-color: #fafafa;
+    font-family: 'Helvetica', sans-serif;
+    min-height: 100vh;
+}
+
+#signup-page .signup-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: white;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#signup-page .signup-subtitle {
+    font-size: 14px;
+    color: #8e8e8e;
+    margin-bottom: 20px;
+}
+
+#signup-page .form-group {
+    margin-bottom: 15px;
+}
+
+#signup-page input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+#signup-page .btn-signup {
+    width: 100%;
+    padding: 10px;
+    background-color: #3897f0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#signup-page .btn-signup:hover {
+    background-color: #2a75c4;
+}
+
+#signup-page .login-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#signup-page .login-text a {
+    color: #3897f0;
+    text-decoration: none;
+}
