@@ -77,15 +77,14 @@ this.Utils = {
 
     loadMask : function (id) {
         const _this = this;
-        console.log("_this: ", _this)
-
         _this.id = id||Utils.getUUID();
         _this.open = async function(){
-            const html = `<div class="spinner-bg" id='${_this.id}'>
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>`;
+            const html =
+            `<div class="spinner-bg" id='${_this.id}'>
+                <div class="spinner-border" role="status"></div>
+                <span class="spinner-text">Loading...</span>
+              </div>
+            `;
             $("body").append($(html));
             //$(`#${_this.id}`).fadeIn();
             $(`#${_this.id}`).show();
@@ -107,5 +106,12 @@ this.Utils = {
             _this.isOpen = false;
         }
         return _this;
+    },
+    getUUID : () => {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     },
 };
