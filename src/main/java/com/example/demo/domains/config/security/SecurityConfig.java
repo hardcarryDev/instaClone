@@ -34,6 +34,7 @@ public class SecurityConfig {
     private final String LOGIN_PAGE = "/login";
     private final String LOGIN_CHECK = "/user/login";
     private final String[] SKIP_URL = new String[]{
+        "/api/**",
         "/login",
         "/signup",
         "/css/**",
