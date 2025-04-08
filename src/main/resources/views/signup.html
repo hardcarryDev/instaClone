@@ -13,7 +13,7 @@
             <h2>Instagram Clone</h2>
             <p class="signup-subtitle">친구들의 사진과 동영상을 보려면 가입하세요.</p>
 
-            <form id="signupForm" th:action="@{/signup}" method="post">
+            <form id="signForm" onsubmit="return false">
                 <div class="form-group">
                     <input type="text" name="email" placeholder="이메일" required>
                 </div>
@@ -21,7 +21,7 @@
                     <input type="text" name="name" placeholder="성명" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="userId" placeholder="사용자 이름" required>
+                    <input type="text" name="userId" placeholder="사용자 아이디" required>
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" placeholder="비밀번호" required>

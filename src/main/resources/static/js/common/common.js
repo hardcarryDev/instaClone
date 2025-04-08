@@ -114,4 +114,37 @@ this.Utils = {
             return v.toString(16);
         });
     },
+    nvl : (val,repVal) => {
+        if(Utils.isEmpty(val)) {
+            if(!repVal) {
+                return "";
+            }else{
+                return repVal;
+            }
+        }else{
+            return val;
+        }
+    },
+    isEmpty : (val) => {
+        //const _this = this;
+        if ( typeof val === "undefined" ||
+            val === null ||
+            val === "" ||
+            val === "undefined" ||
+            val === "null"
+        ){
+            return true
+        }
+        else if(val instanceof Date){
+            return isNaN(val.getTime())
+        }
+        else if(typeof val === "object"){
+            return Utils.isEmptyObject(val);
+        }else{
+            return false;
+        }
+    },
+    isEmptyObject : (data) =>{
+        return $.isEmptyObject(data);
+    },
 };
