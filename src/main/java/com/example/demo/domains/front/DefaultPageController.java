@@ -1,12 +1,10 @@
-package com.example.demo.domains.instagram;
+package com.example.demo.domains.front;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "insta")
-public class InstaController {
+public class DefaultPageController {
 
     @GetMapping("/login")
     public String loginPage() {
