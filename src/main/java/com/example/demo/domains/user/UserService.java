@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -51,5 +52,13 @@ public class UserService implements UserDetailsService {
 
 
         return userDetails;
+    }
+
+    public void updateLoginInfo(String userId) {
+        userMapper.updateLoginInfo(userId);
+    }
+
+    public void updateLoginFailCount(String userId) {
+        userMapper.updateLoginFailCount(userId);
     }
 }

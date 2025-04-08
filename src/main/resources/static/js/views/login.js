@@ -22,11 +22,12 @@ const login = () => {
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         data: data,
         success: function (res){
-            console.log(res)
             if(res.code == 'SUCCESS'){
-                console.log("res.data.redirect: ", res.data.redirect)
                 window.location.href = res.data.redirect
             }
+        },
+        error: function (res){
+            alert(res.data.message)
         }
     });
 }

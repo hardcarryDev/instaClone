@@ -43,4 +43,21 @@
             USER_ID = #{userId}
     </select>
 
+    <update id="updateLoginInfo" parameterType="String" >
+        UPDATE USER
+        SET LAST_LOGIN_DATE      = NOW()
+          ,PS_ERROR_CNT     = 0
+          ,PS_LOCK_DATE     = NULL
+--           ,UPDATED_AT		 = NOW()
+        WHERE USER_ID = #{userId}
+    </update>
+
+    <update id="updateLoginFailCount" parameterType="QueryMap" >
+        UPDATE USER U
+        SET PS_ERROR_CNT = CASE WHEN IFNULL(U.PS_ERROR_CNT,0) >= 5 THEN 1 ELSE IFNULL(U.PS_ERROR_CNT,0) + 1 END
+          ,PS_LOCK_DATE = CASE WHEN IFNULL(U.PS_ERROR_CNT,0) + 1 >= 5 THEN NOW() ELSE NULL END
+          ,USER_STATUS  = CASE WHEN IFNULL(U.PS_ERROR_CNT,0) + 1 >= 5 THEN 'PWD_LOCK' ELSE U.USER_STATUS END
+        WHERE USER_ID = #{userId}
+    </update>
+
 </mapper>

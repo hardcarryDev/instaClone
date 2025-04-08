@@ -2,6 +2,7 @@ package com.example.demo.domains.config.security;
 
 import com.example.demo.common.data.ResultData;
 import com.example.demo.common.enums.ApiResultEnum;
+import com.example.demo.domains.user.UserDetailData;
 import com.example.demo.domains.user.UserService;
 import com.example.demo.util.ObjectUtil;
 import jakarta.servlet.ServletException;
@@ -56,7 +57,7 @@ public class SecurityConfig {
 //                    .passwordParameter("password") 기본이 password여서 안적어도됌
                     .loginProcessingUrl(LOGIN_CHECK)
                     .successHandler(new LoginSuccessHandler(userService))
-                    .failureHandler(new LoginFailureHandler())
+                    .failureHandler(new LoginFailureHandler(userService))
                     .permitAll()
             )
             .logout(logout -> logout
@@ -109,11 +110,15 @@ public class SecurityConfig {
         @Override
         public void onAuthenticationSuccess(HttpServletRequest request,
                                             HttpServletResponse response,
-                                            Authentication authentication)
+                                            Authentication auth)
                 throws IOException, ServletException {
 
-            // 예: 로그인 성공 시 유저 정보 기록
-            String username = authentication.getName();
+            UserDetailData user = (UserDetailData)auth.getPrincipal();
+
+            //로그인 성공
+            userService.updateLoginInfo(user.getUserId());
+
+
 
             Map<String,Object> rsltMap = new HashMap<String,Object>();
             rsltMap.put("redirect", "/home");
@@ -121,7 +126,10 @@ public class SecurityConfig {
         }
     }
 
-    protected class LoginFailureHandler implements AuthenticationFailureHandler {
+    @RequiredArgsConstructor
+    public class LoginFailureHandler implements AuthenticationFailureHandler {
+
+        private final UserService userService; // 실패 횟수 업데이트용
 
         @Override
         public void onAuthenticationFailure(HttpServletRequest request,
@@ -129,10 +137,20 @@ public class SecurityConfig {
                                             AuthenticationException exception)
                 throws IOException, ServletException {
 
-            String username = request.getParameter("userId");
+            String userId = request.getParameter("userId");
 
-            // 실패 시 로그인 페이지로 리다이렉트 + 에러 메시지
-            response.sendRedirect("/login?error=true");
+            // 실패 횟수 업데이트
+            if (userId != null && !userId.isEmpty()) {
+                userService.updateLoginFailCount(userId);
+            }
+
+            // 응답 포맷 지정
+            Map<String, Object> rsltMap = new HashMap<>();
+            rsltMap.put("message", "아이디 또는 비밀번호가 올바르지 않습니다.");
+
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401
+            response.setContentType("application/json;charset=UTF-8");
+            response.getWriter().write(ObjectUtil.toJson(new ResultData(ApiResultEnum.ERROR, rsltMap)));
         }
     }
 }
