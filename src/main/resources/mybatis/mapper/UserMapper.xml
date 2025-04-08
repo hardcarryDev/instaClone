@@ -23,4 +23,24 @@
             'SYSTEM'
         )
     </insert>
+
+    <select id="selectUserInfo" parameterType="map" resultType="QueryMap">
+        SELECT
+            USER_ID,
+            NAME,
+            PASSWORD,
+            PHONE,
+            EMAIL,
+            MEMO,
+            CREATED_AT,
+            CREATED_BY,
+            UPDATED_AT,
+            UPDATED_BY,
+            USE_YN
+        FROM
+            USER
+        WHERE
+            USER_ID = #{userId}
+    </select>
+
 </mapper>

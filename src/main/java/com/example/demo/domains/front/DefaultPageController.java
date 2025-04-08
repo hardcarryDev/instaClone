@@ -17,7 +17,7 @@ public class DefaultPageController {
     }
 
 
-    @GetMapping("/test")
+    @GetMapping("/home")
     public String testPage1() {
         return "test";
     }
