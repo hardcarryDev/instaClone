@@ -10,7 +10,7 @@ this.Utils = {
         const async = Utils.nvl(params.async, true);
 
         const defaultData = {
-            progPh: Utils.getProgPath(),
+
         };
 
         let maskObj = mask ? new Utils.loadMask() : null;
@@ -147,4 +147,31 @@ this.Utils = {
     isEmptyObject : (data) =>{
         return $.isEmptyObject(data);
     },
+    isFunction : (fn) => {
+        return $.isFunction(fn);
+    },
+    isArray : (arr) => {
+        return $.isArray(arr);
+    },
+    isNumber : (val) => {
+        return !isNaN(parseFloat(val)) && isFinite(val);
+    },
+    isObject : (obj) => {
+        return obj !== null && typeof obj === 'object' && obj.constructor === Object;
+    },
+    getUrl : (url) => {
+        return CONTEXT_PATH + url;
+    },
+    sessionExpired  : function(alertFlag){
+        const fn = function(){
+            parent.location.href = Utils.getUrl('/login');
+        }
+        if(alertFlag){
+            alert("세션이 만료되었습니다.\n다시로그인 해주시기 바랍니다.",() => {
+                fn();
+            });
+        }else{
+            fn();
+        }
+    }
 };

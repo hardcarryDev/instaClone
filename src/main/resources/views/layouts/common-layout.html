@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Instagram Clone</title>
 
-<!--    <link th:href="@{/css/reset.css}" rel="stylesheet">-->
+    <script type="text/javascript">
+        this.CONTEXT_PATH = '/' + '[[@{/}]]'.replace(/\//g,'');
+        if(this.CONTEXT_PATH === "/") {
+            this.CONTEXT_PATH = "";
+        }
+    </script>
+
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <link th:href="@{/js/plugin/fontawesome/css/all.min.css}" rel="stylesheet">
 
