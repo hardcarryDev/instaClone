@@ -7,7 +7,6 @@
     <title>회원가입</title>
 </head>
 
-<body>
 <section layout:fragment="content">
     <div id="signup-page">
         <div class="signup-container">
@@ -31,11 +30,10 @@
             </form>
 
             <div class="login-text">
-                계정이 있으신가요? <a th:href="@{/login}">로그인</a>
+                계정이 있으신가요? <a th:href="@{/insta/login}">로그인</a>
             </div>
         </div>
     </div>
+    <script th:inline="javascript" th:src="@{/js/views/signup.js}"></script>
 </section>
-</body>
-<script th:inline="javascript" th:src="@{/js/views/signup.js}"></script>
 </html>
