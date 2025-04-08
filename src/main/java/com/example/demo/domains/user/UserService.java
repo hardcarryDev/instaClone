@@ -48,9 +48,6 @@ public class UserService implements UserDetailsService {
             userDetails = ObjectUtil.objectToClass(user, UserDetailData.class);
         }
 
-        log.info("USER: {}",user.toString());
-
-
         return userDetails;
     }
 
