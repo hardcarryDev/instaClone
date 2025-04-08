@@ -21,6 +21,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER })
+@Mapper
 public @interface CommonMapper {
   // Interface Mapper
 }

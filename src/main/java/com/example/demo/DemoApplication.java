@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
-@MapperScan("com.example.demo.domains")
+//@MapperScan("com.example.demo.domains")
 @SpringBootApplication
 public class DemoApplication extends SpringBootServletInitializer {
 
